@@ -2,16 +2,16 @@ package com.titansupport;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Tickets") //Set the database table to be named "Tickets"
 public class Ticket {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "ID") //Generate an ID for every Ticket
@@ -27,7 +27,7 @@ public class Ticket {
 	private String problemString; //The Ticket Description
 
 
-	public Ticket(){} //Empty object creator 
+	public Ticket(){} //Empty object creator
 
 	public Ticket(String name, LocalDate date, String problemString){ //Loaded object creator
 		this.name = name;
