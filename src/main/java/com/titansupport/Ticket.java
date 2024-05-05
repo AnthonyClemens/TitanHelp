@@ -39,7 +39,7 @@ public class Ticket {
 		return problemString;
 	}
 
-	public void setDesc(String problemString){ //Set the Ticket description
+	public void setProblemString(String problemString){ //Set the Ticket description
 		this.problemString = problemString;
 	}
 
