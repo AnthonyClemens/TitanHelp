@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class ManageTicket{
+public class ManageTicket {
 
     private static SessionFactory sessionFactory;
 
@@ -30,7 +30,7 @@ public class ManageTicket{
             ticket.setName(name);
             ticket.setDate(LocalDate.now());
             ticket.setProblemString(problemString);
-            ticketId = (Integer) session.save(ticket);
+            ticketId = ticket.getID();
             tx.commit();
         } catch (Exception e) {
             if (tx != null)

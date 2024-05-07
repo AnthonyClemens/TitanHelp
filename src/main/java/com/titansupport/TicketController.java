@@ -18,7 +18,9 @@ public class TicketController {
     }
 
     @PostMapping("/submitTicket")
-    public String submitTicket(@RequestParam String name, @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,@RequestParam String problemString, Model model) {
+    public String submitTicket(@RequestParam String name,
+            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+            @RequestParam String problemString, Model model) {
         Ticket ticket = new Ticket(name, date, problemString);
         // Process the ticket here
         model.addAttribute("ticket", ticket);
