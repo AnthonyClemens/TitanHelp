@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Ticket Form</title>
+    <title>TitanHelp Ticket Form</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        form {
+            background-color: #ffffff;
+            border: 2px solid #dddddd;
+            padding: 20px;
+            width: 400px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        input[type="text"],input[type="date"],textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            align-items: center;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <form action="#" th:action="@{/submitTicket}" method="post">        
+    <form action="/ticket/add" method="post">
+        <h1>Submit a TitanHelp Ticket</h1>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" required><br><br>
+
         <label for="date">Date:</label>
-        <input type="date" id="date" name="date">
-        <label for="problemString">Problem:</label>
-        <input type="text" id="problemString" name="problemString">
-        <button type="submit">Submit</button>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="problem">Problem Description:</label>
+        <textarea id="problem" name="problemString" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>

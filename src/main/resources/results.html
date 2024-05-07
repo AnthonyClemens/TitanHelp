@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TitanHelp Submission Results</title>
+    <style>
+        body {
+            background-color: #e9ecef;
+        }
+        .box{
+            background-color: #ffffff;
+            border: 2px solid #dddddd;
+            padding: 20px;
+            width: 400px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        .box a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.375rem 0.75rem;
+            background-color:  #5cb85c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 0.25rem;
+        }
+        .box a:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Ticket Submitted Successfully</h1><br>
+        <p>Name: <span th:text="${submittedTicket.name}"></span></p>
+        <p>Date: <span th:text="${submittedTicket.date}"></span></p>
+        <p>Problem Description: <span th:text="${submittedTicket.problemString}"></span></p>
+        <a href="/ticket/form">Submit Another Ticket?</a>
+    </div>
+</body>
+</html>
